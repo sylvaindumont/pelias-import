@@ -1,0 +1,37 @@
+{
+  "logger": { "level": "info", "timestamp": false },
+  "esclient": { "hosts": [{ "host": "elasticsearch" }] },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "api": {
+    "textAnalyzer": "libpostal",
+    "services": {
+      "placeholder": { "url": "http://placeholder:4100" },
+      "pip": { "url": "http://pip-service:4200" }
+    }
+  },
+  "imports": {
+    "adminLookup": { "enabled": true },
+    "openstreetmap": {
+      "country": "france",
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap"
+    },
+    "openaddresses": { "country": "france", "datapath": "/data/openaddresses" },
+    "polyline": { "datapath": "/data/polylines", "files": ["extract.0sv"] },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "importVenues": false,
+      "importPostalcodes": false,
+      "api_key": "search-R4F4owA"
+    },
+    "geonames": { "datapath": "/data/geonames", "countryCode": "FR" }
+  }
+}

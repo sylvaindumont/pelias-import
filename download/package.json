@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "axios": "^0.17.1",
+    "mkdirp-promise": "^5.0.1",
+    "unzip": "^0.1.11"
+  }
+}
